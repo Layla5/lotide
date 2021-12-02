@@ -1,25 +1,9 @@
-// program to compare two arrays
-
-function eqArrays (arr1, arr2) {
-
-	// compare arrays
-	const result = JSON.stringify(arr1) == JSON.stringify(arr2)
-
-	// if result is true
-	if(result) {
-			return true;
-	}
-	else {
-			return false;
-	}
-
-}
-
-
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-	console.log(actual);
+const eqArrays = require("./eqArrays");
+const assertArraysEqual = function(arr1, arr2) {
+	let actual = eqArrays(arr1, arr2);
+	if (actual === true) console.log(`✅✅✅ Assertion Passed: ${actual} === ${true}`);
+	else console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${true}`);
+	
 };
 
-
-assertEqual(eqArrays([1,2,3], [1,2,3]), true);
+module.exports = assertArraysEqual;
